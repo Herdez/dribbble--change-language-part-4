@@ -1,0 +1,89 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f4f4f4;
+}
+
+figure,
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.header {
+  background-color: rgba(47,47,47,0.98);
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header img {
+  width: 76px;
+}
+
+.shot {
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07);
+  width: 220px;
+  padding: 10px;
+  margin: 5px;
+  background-color: white;
+}
+
+.shot img {
+  width: 100%;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1000px;
+  margin: 40px auto;
+  justify-content: space-between;
+}
+
+.filters {
+  background-color: white;
+  height: 50px;
+  border-bottom: 1px solid #E5E5E5;
+}
+
+.filters ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.filters li {
+  margin: 0 6px;
+}
+
+.filters a {
+  line-height: 50px;
+  color: #444;
+  font-weight: bold;
+}
+
+a {
+  color: currentColor;
+  text-decoration: none;
+}
+
+.fa.fa-chevron-down {
+  color: #BCBCBC;
+  font-size: 12px;
+}
+
+.btn {
+    position: relative;
+    left: 94%;
+    bottom: 36px;
+}
