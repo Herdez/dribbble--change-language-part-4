@@ -33,28 +33,53 @@ class App extends Component {
 
   }
 
+  renderListBasedOnLanguage = (e) => {
+    if (this.state.language === 'EN') {
+       return ( 
+          <ul>
+            <li>
+              <a href='#'>All <i className='fa fa-chevron-down' /> </a>
+            </li>
+            <li>
+              <a href='#'>Popular <i className='fa fa-chevron-down' /> </a>
+            </li>
+            <li>
+              <a href='#'>Recent <i className='fa fa-chevron-down' /></a>
+            </li>
+            <li>
+              <a href='#'>Debut <i className='fa fa-chevron-down' /></a>
+            </li>
+          </ul>
+        );
+      } else {
+       return ( 
+          <ul>
+            <li>
+              <a href='#'>Todos <i className='fa fa-chevron-down' /> </a>
+            </li>
+            <li>
+              <a href='#'>Populares <i className='fa fa-chevron-down' /> </a>
+            </li>
+            <li>
+              <a href='#'>Recentes <i className='fa fa-chevron-down' /></a>
+            </li>
+            <li>
+              <a href='#'>Estrenos <i className='fa fa-chevron-down' /></a>
+            </li>
+          </ul>
+        );
+      }
+  }
+
   render() {
     console.log(this.state.language)
     return (
       <div>
         <Header />
         <nav className='filters'>
-          <ul>
-            <li>
-              <a href='#'>{(this.state.language === 'EN') ? 'All' : 'Todos' } <i className='fa fa-chevron-down' /> </a>
-            </li>
-            <li>
-              <a href='#'>{(this.state.language === 'EN') ? 'Popular' : 'Populares'} <i className='fa fa-chevron-down' /> </a>
-            </li>
-            <li>
-              <a href='#'>{(this.state.language === 'EN') ? 'Recent' : 'Recientes'} <i className='fa fa-chevron-down' /></a>
-            </li>
-            <li>
-              <a href='#'>{(this.state.language === 'EN') ? 'Debut' : 'Estrenos'} <i className='fa fa-chevron-down' /></a>
-            </li>
-          </ul>
           <button className="btn" data-language="ES" onClick={ this.changeLanguage }>ES</button>
           <button className="btn" data-language="EN" onClick={ this.changeLanguage }>EN</button>
+          { this.renderListBasedOnLanguage() }
         </nav>
         <Shots />
         <p style={ styles }>Writen by { name }. { year } .</p>
